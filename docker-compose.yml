@@ -140,7 +140,7 @@ services:
       test: "exit 0"
 
   angular-app:
-    build: angularservice/
+    build: AngularService/
     image: angular
     restart: always
     mem_limit: 1024m
