@@ -5,7 +5,7 @@ services:
     image: zuul-service
     build: zuul-gatewayservice/
     restart: always
-    network_mode: host
+    network_mode: "host"
     hostname: localhost
     depends_on:
       - eurekaserver
@@ -20,7 +20,7 @@ services:
     image: eureka-service:latest
     build: eureka-server/
     restart: always
-    network_mode: host
+    network_mode: "host"
     hostname: localhost
     ports:
       - 8093:8093
@@ -36,7 +36,7 @@ services:
     expose:
       - 27017
     container_name: mongo_docker
-    network_mode: host
+    network_mode: "host"
     hostname: localhost
     restart: always
     volumes:
@@ -52,7 +52,7 @@ services:
     expose:
       - 7474
     container_name: neo4j_docker
-    network_mode: host
+    network_mode: "host"
     hostname: localhost
     restart: always
     volumes:
@@ -98,7 +98,7 @@ services:
     build: ./user-authentication-service/
     container_name: login_docker
     restart: always
-    network_mode: host
+    network_mode: "host"
     hostname: localhost
     depends_on:
       mysql:
